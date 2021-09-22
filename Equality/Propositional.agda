@@ -47,4 +47,7 @@ infix 3 _∎
 _∎ : ∀ {l}{A : Set l}(x : A) → x ≡ x
 _∎ _ = refl
 
+-- congruence
 
+cong : ∀ {l l'}{A : Set l}{B : Set l'}{x y : A}(f : A → B) → x ≡ y → f x ≡ f y
+cong f refl = refl
