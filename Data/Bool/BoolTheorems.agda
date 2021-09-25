@@ -1,7 +1,7 @@
 module Data.Bool.BoolTheorems where
 
 open import Data.Bool.Bool
-open import Equality.Propositional
+open import Relation.Equality.Propositional
 
 -- exercise 3. Prove that conjunction is an associative operation
 
