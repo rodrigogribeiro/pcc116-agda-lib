@@ -1,4 +1,4 @@
-module Equality.Propositional where
+module Relation.Equality.Propositional where
 
 -- definition of the propositional equality type
 
@@ -51,3 +51,8 @@ _∎ _ = refl
 
 cong : ∀ {l l'}{A : Set l}{B : Set l'}{x y : A}(f : A → B) → x ≡ y → f x ≡ f y
 cong f refl = refl
+
+cong₂ : ∀ {l l' l''}{A : Set l}{B : Set l'}{C : Set l''}{x x' : A}{y y' : B}
+                    (f : A → B → C) → x ≡ x' → y ≡ y' → f x y ≡ f x' y'
+cong₂ f refl refl = refl
+

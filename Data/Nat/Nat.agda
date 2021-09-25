@@ -1,6 +1,6 @@
 module Data.Nat.Nat where
 
-import Equality.Propositional
+open import Data.Bool.Bool
 
 -- basic definitions for natural numbers
 
@@ -30,6 +30,24 @@ suc n - suc m = n - m
 
 -- natural number multiplication
 
+infixl 7 _*_
+
 _*_ : ℕ → ℕ → ℕ
 zero  * m = zero
 suc n * m = m + n * m
+
+-- exponentiation
+
+infixr 8 _^_
+
+_^_ : ℕ → ℕ → ℕ
+m ^ zero = 1
+m ^ (suc n) = m * (m ^ n)
+
+-- comparison
+
+_≡B_ : ℕ → ℕ → Bool
+zero ≡B zero = true
+zero ≡B suc m = false
+suc n ≡B zero = false
+suc n ≡B suc m = n ≡B m
