@@ -1,10 +1,7 @@
 module Data.Bool.Bool where
 
+open import Basics.Admit
 open import Relation.Equality.Propositional
-
--- this postulate is necessary, to import this module
-
-postulate admit : ∀ {l}{A : Set l} → A
 
 -- basic boolean type definition
 

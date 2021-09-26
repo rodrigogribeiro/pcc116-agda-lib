@@ -1,5 +1,6 @@
 module Data.Nat.NatTheorems where
 
+open import Basics.Admit
 open import Data.Bool.Bool
 open import Data.Nat.Nat
 
@@ -64,48 +65,48 @@ open import Relation.Equality.Propositional
 -- Exercise 1
 
 *-zero-right : ∀ (n : ℕ) → n * 0 ≡ 0
-*-zero-right = ?
+*-zero-right = admit
 
 -- Exercise 2
 
 *-suc : ∀ (m n : ℕ) → m + m * n ≡ m * suc n
-*-suc = ?
+*-suc = admit
 
 -- Exercise 3
 
 *-comm : ∀ (n m : ℕ) → n * m ≡ m * n
-*-comm = ?
+*-comm = admit
 
 -- Exercise 4
 
 *-distr-+-l : ∀ (x y z : ℕ) → x * (y + z) ≡ (x * y) + (x * z)
-*-distr-+-l = ?
+*-distr-+-l = admit
 
 -- Exercise 5
 
 -zero-l : ∀ (n : ℕ) → 0 - n ≡ 0
--zero-l = ?
+-zero-l = admit
 
 -- Exercise 6
 
 -assoc : ∀ (x y z : ℕ) → x - y - z ≡ x - (y + z)
--assoc = ?
+-assoc = admit
 
 -- Exercise 7
 
 ^-distr-+-* : ∀ (m n p : ℕ) → m ^ (n + p) ≡ (m ^ n) * (m ^ p)
-^-distr-+-* = ?
+^-distr-+-* = admit
 
 -- Exercise 8
 
 ^-distr-*-* : ∀ (m n p : ℕ) → (m * n) ^ p ≡ (m ^ p) * (n ^ p)
-^-distr-*-* = ?
+^-distr-*-* = admit
 
 
 -- Exercise 9
 
 ^-*-assoc : ∀ (m n p : ℕ) → (m ^ n) ^ p ≡ m ^ (n * p)
-^-*-assoc = ?
+^-*-assoc = admit 
 
 -- comparison
 
@@ -146,9 +147,9 @@ odd-not-even (suc n) = even-not-odd n
 -- Exercise 10
 
 +-even : ∀ {n m : ℕ} → even n ≡ true → even m ≡ true → even (n + m) ≡ true
-+-even = ?
++-even = admit
 
 -- Exercise 11 
 
 +-odd-even : ∀ {n m : ℕ} → odd n ≡ true → even m ≡ true → odd (n + m) ≡ true
-+-odd-even = ?
++-odd-even = admit
