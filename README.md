@@ -7,7 +7,7 @@ Universidade Federal de Ouro Preto.
 Exercises
 -----------
 
-Lista 04 - Definições e teoremas sobre booleanos
+* Lista 04 - Definições e teoremas sobre booleanos
     * Data para entrega: 09/10/2021, pela plataforma Moodle.
     * Formato de entrega: arquivo .zip contendo todo o código da biblioteca pcc116-agda-lib.
     * Arquivos contendo os exercícios da lista:
