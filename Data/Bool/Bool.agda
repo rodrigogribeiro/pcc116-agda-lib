@@ -1,6 +1,10 @@
 module Data.Bool.Bool where
 
 open import Basics.Admit
+
+open import Data.Empty.Empty
+open import Data.Unit.Unit
+
 open import Relation.Equality.Propositional
 
 -- basic boolean type definition
@@ -39,4 +43,39 @@ infixl 6 _xor_
 _xor_ : Bool → Bool → Bool
 b xor b' = admit
 
--- remaining exercises are in file Bool-Theorems
+-- boolean implication
+
+_⊃_ : Bool → Bool → Bool
+_     ⊃ true   =  true
+false ⊃ _      =  true
+true  ⊃ false  =  false
+
+
+-- biconditional on booleans
+
+_iff_ : Bool → Bool → Bool
+true  iff true  = true
+false iff false = true
+_     iff _     = false
+
+-- lifting booleans into evidence
+
+T : Bool → Set 
+T true  = ⊤
+T false = ⊥
+
+T→≡ : (b : Bool) → T b → b ≡ true
+T→≡ true  tt = refl
+T→≡ false ()
+
+≡→T : {b : Bool} → b ≡ true → T b
+≡→T refl = tt
+
+
+-- if construction
+
+infix 0 if_then_else_
+
+if_then_else_ : ∀ {a}{A : Set a} → Bool → A → A → A
+if true  then v else _ = v
+if false then _ else v = v
