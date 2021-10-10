@@ -24,6 +24,10 @@ open import Data.List.List
 open import Data.List.ListTheorems
 open import Data.List.Relation.All
 open import Data.List.Relation.Any
+open import Data.List.Relation.Permutation
+open import Data.List.Relation.Sorted
+open import Data.List.Sorting.Extrinsic.InsertionSort
+open import Data.List.Sorting.Extrinsic.InsertionSortTheorems
 
 open import Data.Maybe.Maybe
 
