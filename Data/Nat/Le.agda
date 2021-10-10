@@ -20,6 +20,12 @@ data _≤_ : ℕ → ℕ → Set where
   s≤s : ∀ {n m} → n ≤ m
                 → (suc n) ≤ (suc m)
 
+-- definition of <
+
+infix 4 _<_
+
+_<_ : ℕ → ℕ → Set
+n < m = n ≤ (suc m)
 
 -- ≤ is a ordering relation
 

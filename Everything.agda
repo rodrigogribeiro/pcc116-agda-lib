@@ -25,6 +25,8 @@ open import Data.List.ListTheorems
 open import Data.List.Relation.All
 open import Data.List.Relation.Any
 
+open import Data.Maybe.Maybe
+
 open import Data.Nat.EvenOdd
 open import Data.Nat.Le
 open import Data.Nat.LeAlt

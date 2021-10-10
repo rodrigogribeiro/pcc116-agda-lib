@@ -5,6 +5,7 @@ open import Algebra.Monoid.Monoid
 open import Basics.Level
 
 open import Data.Bool.Bool
+open import Data.Maybe.Maybe
 open import Data.Nat.Nat
 open import Data.Product.Product
 
@@ -83,3 +84,16 @@ unzip : ∀ {a b}{A : Set a}{B : Set b} → List (A × B) → (List A) × (List 
 unzip [] = ([] , [])
 unzip (p ∷ ps) = let r = unzip ps
                  in (proj₁ p ∷ proj₁ r , proj₂ p ∷ proj₂ r)
+
+-- nth function
+
+nth : ∀ {a}{A : Set a} → ℕ → List A → Maybe A
+nth _       []       = nothing
+nth 0       (x ∷ xs) = just x
+nth (suc n) (x ∷ xs) = nth n xs
+
+-- repeat
+
+repeat : ∀ {a}{A : Set a} → A → ℕ → List A
+repeat x zero    = []
+repeat x (suc n) = x ∷ repeat x n

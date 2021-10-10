@@ -8,10 +8,12 @@ open import Data.Biconditional.Biconditional
 open import Data.Bool.Bool
 open import Data.Function.Function
 open import Data.List.List
+open import Data.Maybe.Maybe
 open import Data.Nat.Le
 open import Data.Nat.Nat
 open import Data.Nat.NatTheorems
 open import Data.Product.Product
+open import Data.Sigma.Sigma
 
 open import Relation.Equality.Propositional
 
@@ -192,3 +194,12 @@ foldr-fusion = admit
 map-filter : ∀ {a b}{A : Set a}{B : Set b}(f : A → B)(p : B → Bool)(xs : List A) →
                (filter p ∘ map f) xs ≡ (map f ∘ filter (p ∘ f)) xs
 map-filter = admit
+
+nth-length-just : ∀ {a}{A : Set a}{n}(xs : List A) → n < length xs → ∃[ x ] (nth n xs ≡ just x)
+nth-length-just = admit
+
+nth-length-nothing : ∀ {a}{A : Set a}{n}(xs : List A) → length xs < n → nth n xs ≡ nothing
+nth-length-nothing = admit
+
+repeat-length : ∀ {a}{A : Set a}{x : A}(n : ℕ) → length (repeat x n) ≡ n
+repeat-length = admit
