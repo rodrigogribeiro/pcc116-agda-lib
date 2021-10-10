@@ -6,6 +6,7 @@ open import Basics.Level
 
 open import Data.Bool.Bool
 open import Data.Nat.Nat
+open import Data.Product.Product
 
 
 -- definition of lists
@@ -71,3 +72,14 @@ filter p []       = []
 filter p (x ∷ xs) = let r = filter p xs
                     in if p x then x ∷ r else r
 
+-- zip and unzip
+
+zip : ∀ {a b}{A : Set a}{B : Set b} → List A → List B → List (A × B)
+zip [] _ = []
+zip _ [] = []
+zip (x ∷ xs) (y ∷ ys) = (x , y) ∷ zip xs ys
+
+unzip : ∀ {a b}{A : Set a}{B : Set b} → List (A × B) → (List A) × (List B)
+unzip [] = ([] , [])
+unzip (p ∷ ps) = let r = unzip ps
+                 in (proj₁ p ∷ proj₁ r , proj₂ p ∷ proj₂ r)

@@ -1,6 +1,7 @@
 module Relation.Decidable.Dec where
 
 open import Basics.Admit
+open import Basics.Level
 
 open import Data.Bool.Bool
 open import Data.Empty.Empty
@@ -72,5 +73,5 @@ iff-⇔ x y = admit
 
 -- decidability
 
-Decidable : ∀ {a}{A : Set a} → (A → Set a) → Set a
-Decidable {_}{A} P = ∀ (x : A) → Dec (P x)
+Decidable : ∀ {a b}{A : Set a} → (A → Set b) → Set (a ⊔ b)
+Decidable {_}{_}{A} P = ∀ (x : A) → Dec (P x)
