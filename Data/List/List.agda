@@ -5,7 +5,7 @@ open import Algebra.Monoid.Monoid
 open import Basics.Level
 
 open import Data.Bool.Bool
-open import Data.Maybe.Maybe
+open import Data.Maybe.Maybe hiding (map)
 open import Data.Nat.Nat
 open import Data.Product.Product
 
@@ -17,6 +17,8 @@ infixr 5 _∷_
 data List {a}(A : Set a) : Set a where
   []  : List A
   _∷_ : A → List A → List A
+
+{-# BUILTIN LIST List #-}
 
 -- syntax sugar for lists
 

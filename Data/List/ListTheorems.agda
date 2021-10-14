@@ -8,7 +8,8 @@ open import Data.Biconditional.Biconditional
 open import Data.Bool.Bool
 open import Data.Function.Function
 open import Data.List.List
-open import Data.Maybe.Maybe
+open import Data.List.Relation.All
+open import Data.Maybe.Maybe hiding (map)
 open import Data.Nat.Le
 open import Data.Nat.Nat
 open import Data.Nat.NatTheorems
@@ -171,6 +172,8 @@ filter-&& : ∀ {a}{A : Set a}{P Q : A → Bool}(xs : List A) →
 filter-&& = admit
 
 
+filter-sound : ∀ {a}{A : Set a}(P : A → Bool)(xs : List A) → All (T ∘ P) (filter P xs)
+filter-sound = admit
 
 map-is-foldr : ∀ {a b}{A : Set a}{B : Set b}(f : A → B)(xs : List A) →
                  map f xs ≡ foldr (λ x ac → f x ∷ ac) [] xs

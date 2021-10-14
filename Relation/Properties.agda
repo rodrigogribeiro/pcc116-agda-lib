@@ -10,6 +10,9 @@ module Relation.Properties where
   Reflexive : ∀ {A} → Relation A → Set
   Reflexive {A} _≤_ = ∀ {x} → x ≤ x
 
+  Symmetric : ∀ {A} → Relation A → Set
+  Symmetric {A} _≤_ = ∀ {x y} → x ≤ y → y ≤ x
+
   AntiSymmetric : ∀ {A} → Relation A → Set
   AntiSymmetric {A} _≤_ = ∀ {x y} → x ≤ y → y ≤ x → x ≡ y
 

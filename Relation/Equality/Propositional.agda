@@ -56,3 +56,10 @@ cong₂ : ∀ {l l' l''}{A : Set l}{B : Set l'}{C : Set l''}{x x' : A}{y y' : B}
                     (f : A → B → C) → x ≡ x' → y ≡ y' → f x y ≡ f x' y'
 cong₂ f refl refl = refl
 
+-- inspect idiom
+
+data Inspect {a}{A : Set a}(x : A) : Set a where
+  it : (y : A) → x ≡ y → Inspect x
+
+inspect : ∀ {a}{A : Set a}(x : A) → Inspect x
+inspect x = it x refl

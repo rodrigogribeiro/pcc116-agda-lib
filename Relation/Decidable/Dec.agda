@@ -17,6 +17,10 @@ data Dec {l}(A : Set l) : Set l where
   yes : A   → Dec A
   no  : ¬ A → Dec A
 
+dec : ∀ {l l'}{A : Set l}{B : Set l'} → (A → B) → (¬ A → B) → Dec A → B
+dec p q (yes x) = p x
+dec p q (no ¬x) = q ¬x
+
 -- erasing decidability
 
 ⌞_⌟ : ∀ {l}{A : Set l} → Dec A → Bool

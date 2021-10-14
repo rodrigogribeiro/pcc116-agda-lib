@@ -13,6 +13,10 @@ data Bool : Set where
    true  : Bool
    false : Bool
 
+{-# BUILTIN BOOL Bool #-}
+{-# BUILTIN TRUE true #-}
+{-# BUILTIN FALSE false #-}
+
 -- negation
 
 not : Bool → Bool

@@ -4,7 +4,7 @@ open import Basics.Level
 
 -- definition of the sum type
 
-infix 1 _⊎_
+infixr 1 _⊎_
 
 data _⊎_ {l₁ l₂}(A : Set l₁)
                 (B : Set l₂) : Set (l₁ ⊔ l₂) where

@@ -7,6 +7,8 @@ id x = x
 
 -- function composition
 
+infixr 9 _∘_
+
 _∘_ : ∀ {l1 l2 l3}
         {A : Set l1}
         {B : Set l2}

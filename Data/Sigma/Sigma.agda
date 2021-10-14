@@ -18,6 +18,8 @@ record Σ {l₁ l₂} (A : Set l₁) (B : A → Set l₂) : Set (l₁ ⊔ l₂) 
 open Σ public
 
 
+{-# BUILTIN SIGMA Σ #-}
+
 -- existential quantifier
 
 ∃ : ∀ {l₁ l₂}{A : Set l₁}(B : A → Set l₂) → Set (l₁ ⊔ l₂)

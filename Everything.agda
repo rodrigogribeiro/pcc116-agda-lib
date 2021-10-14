@@ -16,6 +16,7 @@ open import Data.Bool.BoolTheorems
 
 open import Data.Empty.Empty
 
+open import Data.Fin.Fin
 open import Data.Function.Function
 
 open import Data.Isomorphism.Isomorphism
@@ -46,3 +47,12 @@ open import Data.Sum.Sum
 open import Data.Sum.SumTheorems
 
 open import Data.Unit.Unit
+
+open import Data.Vec.Matrix
+open import Data.Vec.Vec
+
+open import Prelude.Classes
+open import Prelude.Nat
+
+open import Relation.Equality.Propositional
+open import Relation.Decidable.Dec
