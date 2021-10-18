@@ -40,7 +40,7 @@ Exercises
         * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Data/List/Relation/All.agda>
         * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Data/List/Relation/Any.agda>
 
-* Lista 08 - Programação com tipos dependentes. 
+* Lista 08 - Programação com tipos dependentes - Parte I.
     * Data para entrega: 06/11/2021
     * Formato de entrega: arquivo .zip contendo todo o código da biblioteca pcc116-agda-lib.
     * Arquivos contendo os exercícios da lista: 
@@ -48,6 +48,14 @@ Exercises
         * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Data/Vec/Matrix.agda>
         * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Language/Data/Data.agda>
 
+* Lista 09 - Programação com tipos dependentes  - Parte II.
+    * Data para entrega: 13/11/2021
+    * Formato de entrega: arquivo .zip contendo todo o código da biblioteca pcc116-agda-lib.
+    * Arquivos contendo os exercícios da lista: 
+        * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Data/List/Relation/Sublist.agda>
+        * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Data/List/Sorting/Extrinsic/StalinSort.agda>
+        * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Data/List/Sorting/Extrinsic/StalinSortTheorems.agda>
+        * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Data/List/Sorting/Intrinsic/InsertionSort.agda>
 
 
 Installation

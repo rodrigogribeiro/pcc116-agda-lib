@@ -30,6 +30,10 @@ foldl : ∀ {a b}{A : Set a}{B : Set b}{n} → (B → A → B) → B → Vec A n
 foldl _⊕_ v [] = v
 foldl _⊕_ v (x ∷ xs) = foldl _⊕_ (v ⊕ x) xs
 
+foldr : ∀ {a b}{A : Set a}{B : Set b}{n} → (A → B → B) → B → Vec A n → B
+foldr _⊕_ v [] = v
+foldr _⊕_ v (x ∷ xs) = x ⊕ foldr _⊕_ v xs
+
 -- EXERCÍCIOS
 
 -- utilities over vectors
