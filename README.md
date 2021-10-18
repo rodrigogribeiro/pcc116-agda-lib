@@ -1,5 +1,5 @@
 PCC116 - Agda Library
-============================
+=====================
 
 A simple Agda library developed during the course PCC116 - Logics in computer science at
 Universidade Federal de Ouro Preto.
