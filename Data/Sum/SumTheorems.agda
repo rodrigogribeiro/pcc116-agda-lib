@@ -47,11 +47,3 @@ open import Relation.Equality.Propositional
 
 ⊎-identity-l : ∀ {l}{A : Set l} → ⊥ ⊎ A ≃ A
 ⊎-identity-l = admit
-
--- unit cancels sum
-
-⊎-⊤-l : ∀ {l}{A : Set l} → ⊤ ⊎ A ≃ ⊤
-⊎-⊤-l = admit
-
-⊎-⊤-r : ∀ {l}{A : Set l} → A ⊎ ⊤ ≃ ⊤
-⊎-⊤-r = admit

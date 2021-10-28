@@ -7,7 +7,7 @@ open import Data.Char.Char
 open import Data.Empty.Empty
 open import Data.Function.Function
 open import Data.List.List hiding (foldl)
-open import Data.Maybe.Maybe
+open import Data.Maybe.Maybe hiding (_>>_ ; _>>=_)
 open import Data.Nat.Nat
 open import Data.Product.Product
 open import Data.Sigma.Sigma renaming (_,_ to _,,_)
