@@ -57,6 +57,12 @@ Exercises
         * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Data/List/Sorting/Extrinsic/StalinSortTheorems.agda>
         * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Data/List/Sorting/Intrinsic/InsertionSort.agda>
 
+* Lista 10 - Recursão não estrutural.
+    * Data para entrega: 20/11/2021
+    * Formato de entrega: arquivo .zip contendo todo o código da biblioteca pcc116-agda-lib.
+    * Arquivos contendo os exercícios da lista: 
+        * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Data/Nat/Div/DivIntrinsic.agda>
+
 
 Installation
 --------------
