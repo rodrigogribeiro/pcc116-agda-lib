@@ -11,6 +11,7 @@ open import Basics.Admit
 open import Basics.Level
 
 open import Coinduction.Size
+open import Coinduction.DelayMonad
 
 open import Data.Biconditional.Biconditional
 open import Data.Biconditional.BiconditionalTheorems
@@ -60,6 +61,10 @@ open import Data.Vec.Vec
 
 open import Language.Printf.Printf
 open import Language.Data.Data
+open import Language.Exp.Intrinsic
+open import Language.Exp.Extrinsic
+open import Language.Lambda.Untyped
+open import Language.Lambda.Typed
 
 open import Prelude.Classes
 open import Prelude.Nat
