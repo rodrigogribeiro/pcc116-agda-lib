@@ -63,6 +63,19 @@ Exercises
     * Arquivos contendo os exercícios da lista: 
         * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Data/Nat/Div/DivIntrinsic.agda>
 
+* Lista 11 - Noções de semântica formal.
+    * Data para entrega: 27/11/2021
+    * Formato para entrega: arquivo .zip contendo todo o código da biblioteca pcc116-agda-lib.
+    * Arquivos contendo os exercícios da lista: 
+        * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Language/Exp/Intrinsic.agda>
+        * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Language/Exp/Extrinsic.agda>
+
+* Lista 12 - Programação genérica.
+    * Data para entrega: 04/12/2021
+    * Formato para entrega: arquivo .zip contendo todo o código da biblioteca pcc116-agda-lib
+    * Arquivo contendo os exercícios da lista:
+        * <https://github.com/rodrigogribeiro/pcc116-agda-lib/blob/master/Data/Generic/GSize.agda>
+
 
 Installation
 --------------
