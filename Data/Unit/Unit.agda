@@ -5,3 +5,4 @@ module Data.Unit.Unit where
 record ⊤ : Set where
   constructor tt
 
+{-# BUILTIN UNIT ⊤ #-}

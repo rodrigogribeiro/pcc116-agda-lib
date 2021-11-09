@@ -1,4 +1,4 @@
-{-# OPTIONS --sized-types #-}
+{-# OPTIONS --copatterns --sized-types --guardedness #-}
 
 module Everything where
 
@@ -12,6 +12,7 @@ open import Basics.Level
 
 open import Coinduction.Size
 open import Coinduction.DelayMonad
+open import Coinduction.Stream
 
 open import Data.Biconditional.Biconditional
 open import Data.Biconditional.BiconditionalTheorems

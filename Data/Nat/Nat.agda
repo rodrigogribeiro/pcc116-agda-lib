@@ -51,3 +51,8 @@ zero ≡B zero = true
 zero ≡B suc m = false
 suc n ≡B zero = false
 suc n ≡B suc m = n ≡B m
+
+_≤B_ : ℕ → ℕ → Bool
+zero ≤B m = true
+suc _ ≤B zero = false
+suc n ≤B suc m = n ≤B m
