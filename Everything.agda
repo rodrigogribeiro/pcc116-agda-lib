@@ -4,8 +4,14 @@ module Everything where
 
 -- Importing every module from the library
 
-open import Algebra.Monoid.Monoid
+open import Algebra.Functor.Functor
 open import Algebra.Order.Order
+open import Algebra.Alternative.Alternative
+open import Algebra.Monoid.Monoid
+open import Algebra.Traversable.Traversable
+open import Algebra.Applicative.Applicative
+open import Algebra.Monad.Monad
+
 
 open import Basics.Admit
 open import Basics.Level
@@ -22,6 +28,11 @@ open import Data.Char.Char
 open import Data.Empty.Empty
 open import Data.Fin.Fin
 open import Data.Function.Function
+open import Data.Generic.GSize
+open import Data.Generic.GMap
+open import Data.Generic.Regular
+open import Data.Generic.GEq
+open import Data.Generic.SampleReps
 open import Data.Isomorphism.Isomorphism
 open import Data.List.List
 open import Data.List.ListTheorems
@@ -76,3 +87,7 @@ open import Relation.Induction.WellFounded
 open import Relation.Induction.Natural
 open import Relation.Induction.InverseImage
 open import Relation.Induction.Lexicographic
+
+open import Reflection.API
+open import Reflection.Core
+open import Reflection.DeBruijnAPI

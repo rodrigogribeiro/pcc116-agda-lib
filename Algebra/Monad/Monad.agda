@@ -1,5 +1,7 @@
 module Algebra.Monad.Monad where
 
+open import Algebra.Functor.Functor
+
 record Monad (M : Set → Set) : Set₁ where
   field
     return : ∀ {A} → A → M A
@@ -8,3 +10,10 @@ record Monad (M : Set → Set) : Set₁ where
   m >> m' = m >>= λ _ → m'
 
 open Monad {{...}} public
+
+
+monadAp : ∀ {a b} {A B : Set a} {M : Set a → Set b}
+            {{_ : Functor M}} →
+            (M (A → B) → ((A → B) → M B) → M B) →
+            M (A → B) → M A → M B
+monadAp _>>=_ mf mx = mf >>= λ f → fmap f mx

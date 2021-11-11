@@ -51,8 +51,8 @@ module Language.Lambda.Untyped where
   step (`λ e) = mapM `λ (step e)
 
 
-  ∞eval : ∀ {n i} → Term n → ∞Delay (Term n) i
-  eval : ∀ {n i} → Term n → Delay (Term n) i
+  ∞eval : ∀ {n i} → Term n → ∞Delay i (Term n)
+  eval : ∀ {n i} → Term n → Delay i (Term n)
 
   eval e with step e
   ...| nothing = now e
@@ -60,7 +60,7 @@ module Language.Lambda.Untyped where
 
   ∞Delay.force (∞eval e) = eval e
 
-  extract : ℕ → ∀ {n} → Delay (Term n) ∞ → Maybe (Term n)
+  extract : ℕ → ∀ {n} → Delay ∞ (Term n) → Maybe (Term n)
   extract n (now e) = just e
   extract zero (later ∞d) = nothing
   extract (suc n) (later ∞d) = extract n (∞Delay.force ∞d)

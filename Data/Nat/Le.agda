@@ -96,7 +96,12 @@ data Total : ℕ → ℕ → Set where
 -- Exercise 2. Implement a less or equal than test that results on a boolean.
 
 _≤ᵇ_ : ℕ → ℕ → Bool
-n ≤ᵇ m = admit
+zero ≤ᵇ m = true
+suc n ≤ᵇ zero = false
+suc n ≤ᵇ suc m = n ≤ᵇ m
+
+_<?_ : ℕ → ℕ → Bool
+n <? m = suc n ≤ᵇ m
 
 -- Exercise 3. Prove the soundness and completeness of your function ≤ᵇ.
 

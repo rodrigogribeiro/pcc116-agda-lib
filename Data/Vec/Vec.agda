@@ -34,6 +34,10 @@ foldr : ∀ {a b}{A : Set a}{B : Set b}{n} → (A → B → B) → B → Vec A n
 foldr _⊕_ v [] = v
 foldr _⊕_ v (x ∷ xs) = x ⊕ foldr _⊕_ v xs
 
+vapp : ∀ {a b} {A : Set a} {B : Set b} {n} → Vec (A → B) n → Vec A n → Vec B n
+vapp  []       _       = []
+vapp (f ∷ fs) (x ∷ xs) = f x ∷ vapp fs xs
+
 -- EXERCÍCIOS
 
 -- utilities over vectors
@@ -42,8 +46,8 @@ zipWith : ∀ {a b c}{A : Set a}{B : Set b}{C : Set c}{n} →
             (A → B → C) → Vec A n → Vec B n → Vec C n
 zipWith = admit
 
-pure : ∀ {a}{A : Set a}(x : A)(n : ℕ) → Vec A n
-pure = admit
+repeat : ∀ {a}{A : Set a}(n : ℕ) (x : A) → Vec A n
+repeat = admit
 
 _⟨⋆⟩_ : ∀ {a b}{A : Set a}{B : Set b}{n} →
         Vec (A → B) n → Vec A n → Vec B n

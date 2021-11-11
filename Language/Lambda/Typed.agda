@@ -1,6 +1,7 @@
 {-# OPTIONS --sized-types #-}
 
 module Language.Lambda.Typed where
+  open import Algebra.Monad.Monad
   open import Coinduction.Size
   open import Data.Empty.Empty
   open import Data.Function.Function hiding (id)
@@ -88,9 +89,9 @@ module Language.Lambda.Typed where
   lookup (here refl) (v ∷ ρ) = v
   lookup (there t∈Γ) (v ∷ ρ) = lookup t∈Γ ρ
 
-  eval  : ∀ {i Γ Δ t} → Γ ⊢ t → Env Δ Γ → Delay (Value Δ t) i
-  apply : ∀ {i Δ t t'} → Value Δ (t' ⇒ t) → Value Δ t' → Delay (Value Δ t) i
-  beta  : ∀ {i Γ Δ t t'} → (t' ∷ Γ) ⊢ t → Env Δ Γ → Value Δ t' → ∞Delay (Value Δ t) i
+  eval  : ∀ {i Γ Δ t} → Γ ⊢ t → Env Δ Γ → Delay i (Value Δ t)
+  apply : ∀ {i Δ t t'} → Value Δ (t' ⇒ t) → Value Δ t' → Delay i (Value Δ t)
+  beta  : ∀ {i Γ Δ t t'} → (t' ∷ Γ) ⊢ t → Env Δ Γ → Value Δ t' → ∞Delay i (Value Δ t)
 
   eval (var v)  ρ = now (lookup v ρ)
   eval (`λ e)   ρ = now (`λ e ρ)
@@ -157,9 +158,9 @@ module Language.Lambda.Typed where
   weakening = weaken-Value wk
 
 
-  readback : ∀ {i Γ t} → Value Γ t → Delay (Normal Γ t) i
-  nereadback : ∀ {i Γ t} → Neutral Value Γ t → Delay (Neutral Normal Γ t) i
-  eta : ∀ {i Γ t t'} → Value Γ (t' ⇒ t) → ∞Delay (Normal (t' ∷ Γ) t) i
+  readback : ∀ {i Γ t} → Value Γ t → Delay i (Normal Γ t)
+  nereadback : ∀ {i Γ t} → Neutral Value Γ t → Delay i (Neutral Normal Γ t)
+  eta : ∀ {i Γ t t'} → Value Γ (t' ⇒ t) → ∞Delay i (Normal (t' ∷ Γ) t)
 
   readback {t = ι} (neutral x) = map neutral (nereadback x)
   readback {t = t₁ ⇒ t₂} v = map `λ (later (eta v))
@@ -179,7 +180,7 @@ module Language.Lambda.Typed where
   idEnv (t ∷ Γ) = neutral (var (here refl)) ∷ weaken-Env wk (idEnv Γ)
 
 
-  nf : ∀ {Γ t} → Γ ⊢ t → Delay (Normal Γ t) ∞
+  nf : ∀ {Γ t} → Γ ⊢ t → Delay ∞ (Normal Γ t)
   nf {Γ} Γ⊢t
     = do
         v ← eval Γ⊢t (idEnv Γ)

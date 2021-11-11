@@ -332,3 +332,15 @@ postulate
 {-# BUILTIN AGDATCMWITHRECONSPARAMS           withReconstructed          #-}
 {-# BUILTIN AGDATCMNOCONSTRAINTS              noConstraints              #-}
 {-# BUILTIN AGDATCMRUNSPECULATIVE             runSpeculative             #-}
+
+newMeta : Type → TC Term
+newMeta = checkType unknown
+
+newMeta! : TC Term
+newMeta! = newMeta unknown
+
+set₀ : Type
+set₀ = agda-sort (lit 0)
+
+set! : Type
+set! = agda-sort unknown

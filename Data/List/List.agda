@@ -5,6 +5,7 @@ open import Algebra.Monoid.Monoid
 open import Basics.Level
 
 open import Data.Bool.Bool
+open import Data.Function.Function
 open import Data.Maybe.Maybe hiding (map)
 open import Data.Nat.Nat
 open import Data.Product.Product
@@ -99,3 +100,12 @@ nth (suc n) (x ∷ xs) = nth n xs
 repeat : ∀ {a}{A : Set a} → A → ℕ → List A
 repeat x zero    = []
 repeat x (suc n) = x ∷ repeat x n
+
+
+-- concatMap
+
+concat : ∀ {a}{A : Set a} → List (List A) → List A
+concat = foldr _++_ []
+
+concatMap : ∀ {a b}{A : Set a}{B : Set b} → (A → List B) → List A → List B
+concatMap f = concat ∘ map f

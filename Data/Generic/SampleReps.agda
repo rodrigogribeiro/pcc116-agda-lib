@@ -21,6 +21,8 @@ module NAT where
 
 module LIST where
 
+  open import Data.Nat.Nat
+
   listF : ∀ {n} → Reg (suc n)
   listF = `μ (`1 `+ (`wk `zero `* `zero))
 

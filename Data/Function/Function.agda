@@ -22,3 +22,6 @@ flip f b a = f a b
 
 case_of_ : ∀ {A B : Set} → A → (A → B) → B
 case x of f = f x
+
+const : ∀ {l1 l2}{A : Set l1}{B : Set l2} → A → B → A
+const x _ = x
