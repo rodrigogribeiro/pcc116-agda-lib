@@ -8,6 +8,14 @@ data _<_ (n : ℕ) : ℕ → Set where
   <-base : n < suc n
   <-step : ∀ {m} → n < m → n < suc m
 
+<-suc : ∀ {n m} → n < m → suc n < suc m
+<-suc <-base = <-base
+<-suc (<-step p) = <-step (<-suc p)
+
+0<sucn : ∀ {n} → 0 < suc n
+0<sucn {zero} = <-base
+0<sucn {suc n} = <-step 0<sucn
+
 <-ℕ-wf : WellFounded _<_
 <-ℕ-wf x = acc (IH x)
   where

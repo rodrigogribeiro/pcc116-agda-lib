@@ -25,7 +25,7 @@ data _≤_ : ℕ → ℕ → Set where
 infix 4 _<_
 
 _<_ : ℕ → ℕ → Set
-n < m = n ≤ (suc m)
+n < m = suc n ≤ m
 
 -- ≤ is a ordering relation
 
