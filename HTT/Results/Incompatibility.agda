@@ -27,8 +27,10 @@ Type-isntSet S = false≢true contra
   where
     contra : false ≡ true
     contra = begin
-               false                   ≡⟨ happly (ap coerce (S Bool Bool refl (ua not-≃))) false ⟩
-               coerce (ua not-≃) false ≡⟨ happly (ua-comp not-≃) false ⟩
+               false
+             ≡⟨ happly (ap coerce (S Bool Bool refl (ua not-≃))) false ⟩
+               coerce (ua not-≃) false
+             ≡⟨ happly (ua-comp not-≃) false ⟩
                true
              ∎
 
